@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mdavis1982/duration.svg?branch=master)](https://travis-ci.org/mdavis1982/duration)
+
 # Duration
 Duration is a PHP library for converting between different types of durations. 
 
