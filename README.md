@@ -52,9 +52,9 @@ $duration = Duration::week();
 
 $duration->inSeconds(); // 604,800
 $duration->inMinutes(); // 10,080
-$duration->inHours(); // 168
-$duration->inDays(); // 7
-$duration->inWeeks(); // 1
+$duration->inHours();   // 168
+$duration->inDays();    // 7
+$duration->inWeeks();   // 1
 ```
 
 You can also chain the call (as you would likely do when setting a config value):
