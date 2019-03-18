@@ -13,13 +13,11 @@ class Duration
     const SECONDS_IN_WEEK = 604800;
 
     /** @var int */
-    private $seconds;
+    protected $seconds;
 
-    private function __construct(int $seconds)
+    protected function __construct(int $seconds)
     {
         $this->seconds = $seconds;
-
-        return $this;
     }
 
     public static function second(): self
