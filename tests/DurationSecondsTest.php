@@ -2,8 +2,8 @@
 
 namespace MatthewDavis\Duration\Test;
 
-use PHPUnit\Framework\TestCase;
 use MatthewDavis\Duration\Duration;
+use PHPUnit\Framework\TestCase;
 
 class DurationSecondsTest extends TestCase
 {
@@ -18,7 +18,7 @@ class DurationSecondsTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_seconds_in_minutes()
     {
-        $oneMinute = Duration::seconds(60)->inMinutes();
+        $oneMinute   = Duration::seconds(60)->inMinutes();
         $fiveMinutes = Duration::seconds(300)->inMinutes();
 
         $this->assertEquals(1, $oneMinute);
@@ -28,7 +28,7 @@ class DurationSecondsTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_seconds_in_hours()
     {
-        $oneHour = Duration::seconds(3600)->inHours();
+        $oneHour    = Duration::seconds(3600)->inHours();
         $threeHours = Duration::seconds(10800)->inHours();
 
         $this->assertEquals(1, $oneHour);
@@ -38,7 +38,7 @@ class DurationSecondsTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_seconds_in_days()
     {
-        $oneDay = Duration::seconds(86400)->inDays();
+        $oneDay    = Duration::seconds(86400)->inDays();
         $threeDays = Duration::seconds(259200)->inDays();
 
         $this->assertEquals(1, $oneDay);
@@ -48,7 +48,7 @@ class DurationSecondsTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_seconds_in_weeks()
     {
-        $oneWeek = Duration::seconds(604800)->inWeeks();
+        $oneWeek    = Duration::seconds(604800)->inWeeks();
         $threeWeeks = Duration::seconds(1814400)->inWeeks();
 
         $this->assertEquals(1, $oneWeek);
