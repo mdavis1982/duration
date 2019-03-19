@@ -2,8 +2,8 @@
 
 namespace MatthewDavis\Duration\Test;
 
-use PHPUnit\Framework\TestCase;
 use MatthewDavis\Duration\Duration;
+use PHPUnit\Framework\TestCase;
 
 class DurationWeeksTest extends TestCase
 {
@@ -26,7 +26,7 @@ class DurationWeeksTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_weeks_in_hours()
     {
-        $oneWeekInHours = Duration::weeks(1)->inHours();
+        $oneWeekInHours    = Duration::weeks(1)->inHours();
         $threeWeeksInHours = Duration::weeks(3)->inHours();
 
         $this->assertEquals(168, $oneWeekInHours);
@@ -36,7 +36,7 @@ class DurationWeeksTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_weeks_in_days()
     {
-        $oneWeekInDays = Duration::weeks(1)->inDays();
+        $oneWeekInDays    = Duration::weeks(1)->inDays();
         $threeWeeksInDays = Duration::weeks(3)->inDays();
 
         $this->assertEquals(7, $oneWeekInDays);
@@ -46,7 +46,7 @@ class DurationWeeksTest extends TestCase
     /** @test */
     public function it_returns_a_duration_created_in_weeks_in_weeks()
     {
-        $oneWeek = Duration::weeks(1)->inWeeks();
+        $oneWeek    = Duration::weeks(1)->inWeeks();
         $threeWeeks = Duration::weeks(3)->inWeeks();
 
         $this->assertEquals(1, $oneWeek);
