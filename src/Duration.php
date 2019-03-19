@@ -1,17 +1,10 @@
 <?php
+declare(strict_types=1);
 
 namespace MatthewDavis\Duration;
 
-class Duration
+class Duration implements DurationInterface
 {
-    const SECONDS_IN_MINUTE = 60;
-
-    const SECONDS_IN_HOUR = 3600;
-
-    const SECONDS_IN_DAY = 86400;
-
-    const SECONDS_IN_WEEK = 604800;
-
     /** @var int */
     protected $seconds;
 
@@ -20,54 +13,54 @@ class Duration
         $this->seconds = $seconds;
     }
 
-    public static function second(): self
+    public static function second(): DurationInterface
     {
         return static::seconds(1);
     }
 
-    public static function seconds(int $seconds): self
+    public static function seconds(int $seconds): DurationInterface
     {
-        return new self($seconds);
+        return new static($seconds);
     }
 
-    public static function minute(): self
+    public static function minute(): DurationInterface
     {
         return static::minutes(1);
     }
 
-    public static function minutes(int $minutes): self
+    public static function minutes(int $minutes): DurationInterface
     {
-        return new self($minutes * self::SECONDS_IN_MINUTE);
+        return new static($minutes * DurationInterface::SECONDS_IN_MINUTE);
     }
 
-    public static function hour(): self
+    public static function hour(): DurationInterface
     {
         return static::hours(1);
     }
 
-    public static function hours(int $hours): self
+    public static function hours(int $hours): DurationInterface
     {
-        return new self($hours * self::SECONDS_IN_HOUR);
+        return new static($hours * DurationInterface::SECONDS_IN_HOUR);
     }
 
-    public static function day(): self
+    public static function day(): DurationInterface
     {
         return static::days(1);
     }
 
-    public static function days(int $days): self
+    public static function days(int $days): DurationInterface
     {
-        return new self($days * self::SECONDS_IN_DAY);
+        return new static($days * DurationInterface::SECONDS_IN_DAY);
     }
 
-    public static function week(): self
+    public static function week(): DurationInterface
     {
         return static::weeks(1);
     }
 
-    public static function weeks(int $weeks): self
+    public static function weeks(int $weeks): DurationInterface
     {
-        return new self($weeks * self::SECONDS_IN_WEEK);
+        return new static($weeks * DurationInterface::SECONDS_IN_WEEK);
     }
 
     public function inSeconds(): int
@@ -77,21 +70,21 @@ class Duration
 
     public function inMinutes(): float
     {
-        return $this->seconds / self::SECONDS_IN_MINUTE;
+        return $this->seconds / DurationInterface::SECONDS_IN_MINUTE;
     }
 
     public function inHours(): float
     {
-        return $this->seconds / self::SECONDS_IN_HOUR;
+        return $this->seconds / DurationInterface::SECONDS_IN_HOUR;
     }
 
     public function inDays(): float
     {
-        return $this->seconds / self::SECONDS_IN_DAY;
+        return $this->seconds / DurationInterface::SECONDS_IN_DAY;
     }
 
     public function inWeeks(): float
     {
-        return $this->seconds / self::SECONDS_IN_WEEK;
+        return $this->seconds / DurationInterface::SECONDS_IN_WEEK;
     }
 }
